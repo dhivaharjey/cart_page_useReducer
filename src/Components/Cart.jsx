@@ -19,10 +19,8 @@ const Cart = () => {
     dispatch,
     setOrders,
     orders,
-    recentOrder,
     setRecentOrder,
   } = CartState();
-  // console.log("cart", cart);
 
   const [total, setTotal] = useState();
   const [isLoading, setIsLoading] = useState(false);
