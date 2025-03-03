@@ -4,6 +4,7 @@ import Rating from "./Rating";
 import "./Style.css";
 import { CartState } from "../Context/Context";
 import { ACTIONS } from "../Context/reducer";
+import { toast } from "react-toastify";
 const SingleProduct = ({ product }) => {
   const {
     state: { cart },
@@ -27,13 +28,16 @@ const SingleProduct = ({ product }) => {
               )}
               <Rating rating={product.ratings} />
             </Card.Subtitle>
-            {cart?.some((item) => item.id === product.id) ? (
+            {cart?.find((item) => item.id === product.id) ? (
               <Button
                 variant="danger"
                 onClick={() => {
                   dispatch({
                     type: ACTIONS.REMOVE_FROM_CART,
                     payload: { id: product.id },
+                  });
+                  toast.warn("Removed from cart", {
+                    position: "top-center",
                   });
                 }}
               >
@@ -51,6 +55,9 @@ const SingleProduct = ({ product }) => {
                       dispatch({
                         type: ACTIONS.ADD_TO_CART,
                         payload: product,
+                      });
+                      toast.success("Added to cart", {
+                        position: "top-center",
                       });
                     }}
                   >

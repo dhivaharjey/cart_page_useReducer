@@ -10,7 +10,8 @@ import {
 } from "react-bootstrap";
 
 import { MdShoppingCart } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { BsBag, BsBagFill } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 import { CartState } from "../Context/Context";
 import { AiFillDelete } from "react-icons/ai";
 import { ACTIONS } from "../Context/reducer";
@@ -20,7 +21,9 @@ const Header = () => {
     state: { cart },
     dispatch,
     filterDispatch,
+    orders,
   } = CartState();
+  const navigate = useNavigate();
   return (
     <>
       <Navbar
@@ -67,7 +70,7 @@ const Header = () => {
                     {cart?.map((item) => {
                       return (
                         <>
-                          <span className="cart-item" key={item.id}>
+                          <span className="cart-item" key={item?.id}>
                             <img
                               className="cartItemImage"
                               src={item.image}
@@ -100,6 +103,16 @@ const Header = () => {
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
+          <Navbar.Brand
+            // style={{ cursor: "pointer" }}
+            onClick={() => navigate("/orders")}
+            className="order-icon"
+          >
+            <BsBagFill size={25} style={{ color: "#fff", cursor: "pointer" }} />
+            {orders?.length > 0 && (
+              <span className="orders">{orders?.length}</span>
+            )}
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </>

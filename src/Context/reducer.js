@@ -8,6 +8,7 @@ export const ACTIONS = {
   FILTER_BY_RATING: "filter by rating",
   FILTER_BY_SEARCH: "filter by search",
   CLEAR_FILTER: "clear filter",
+  CLEAR_CART: "clear cart",
 };
 
 export const cartReducer = (state, action) => {
@@ -30,6 +31,11 @@ export const cartReducer = (state, action) => {
             ? (item.qty = action?.payload.qty)
             : item.qty
         ),
+      };
+    case ACTIONS.CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
       };
     default:
       state;

@@ -6,7 +6,7 @@ import { ACTIONS } from "../Context/reducer";
 
 const Filters = () => {
   const {
-    filterState: { sort, byStock, byFastDelivery, byRating, searchQuery },
+    filterState: { sort, byStock, byFastDelivery, byRating },
     filterDispatch,
   } = CartState();
 
