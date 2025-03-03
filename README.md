@@ -1,6 +1,6 @@
 # Shopping Application
 
-<video width="600" controls> <source src="src\assets\cart-page.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+[](https://github.com/user-attachments/assets/1de6b0ec-a9bd-45cc-8144-389946d11dcf)
 
 This is a shopping application built with React and Vite. It allows users to browse products, add them to a cart, and proceed to checkout. The application also supports filtering products based on various criteria such as price, stock availability, delivery options, and ratings.
 
