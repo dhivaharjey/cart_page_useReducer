@@ -57,7 +57,6 @@ const Cart = () => {
     } finally {
       setIsLoading(false);
     }
-    // console.log(amount);
   };
 
   const handlePaymentVerify = async (order) => {
