@@ -36,7 +36,7 @@ const Cart = () => {
     try {
       setIsLoading(true);
       const res = await axios.post(
-        "http://localhost:4000/api/payment/order",
+        `${import.meta.env.VITE_BACKEND_URL}/api/payment/order`,
         {
           amount,
         },
@@ -79,7 +79,7 @@ const Cart = () => {
         let res;
         try {
           res = await axios.post(
-            "http://localhost:4000/api/payment/verify",
+            `${import.meta.env.VITE_BACKEND_URL}/api/payment/verify`,
             payload
           );
         } catch (error) {

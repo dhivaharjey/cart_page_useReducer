@@ -62,7 +62,7 @@ const Orders = () => {
         ) : null}
 
         <h2 className="text-center text-success">Orders List</h2>
-        {orders.length > 1 ? (
+        {orders.length > 0 ? (
           <>
             <ListGroup variant="flush">
               {orders.map((item, index) => (
